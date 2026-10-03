@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<meta name="description" content="Professional legal guidance and representation in the United Kingdom — Corporate, Criminal, Family, Property and Immigration Law."/>
+<title>Dayor Kumar Law Firm</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+/* ── TOKENS ─────────────────────────────────────────── */
+:root {
+  --navy:      #0D1B2E;
+  --navy-deep: #080F1C;
+  --navy-mid:  #122240;
+  --gold:      #C6993A;
+  --gold-lt:   #E2BC6A;
+  --gold-dim:  rgba(198,153,58,.12);
+  --gold-line: rgba(198,153,58,.35);
+  --cream:     #F7F3EC;
+  --cream-dk:  #EDE7D8;
+  --white:     #FFFFFF;
+  --muted:     #8A9BB0;
+  --text:      #1A2A3A;
+  --border:    rgba(198,153,58,.2);
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans:  'Inter', system-ui, sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--cream);
+  color:var(--text);
+  font-family:var(--font-sans);
+  font-size:16px;
+  line-height:1.7;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none;}
+img{display:block;max-width:100%;}
+::-webkit-scrollbar{width:5px;}
+::-webkit-scrollbar-track{background:var(--cream);}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px;}
+
+/* ── UTILITIES ──────────────────────────────────────── */
+.container{max-width:1140px;margin:0 auto;padding:0 28px;}
+.section{padding:100px 0;}
+.section--dark{background:var(--navy);color:var(--white);}
+.section--cream{background:var(--cream);}
+.section--white{background:var(--white);}
+
+.eyebrow{
+  display:inline-block;
+  font-family:var(--font-sans);
+  font-size:.72rem;
+  font-weight:600;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:14px;
+}
+.section-title{
+  font-family:var(--font-serif);
+  font-size:clamp(1.9rem,3.5vw,2.8rem);
+  font-weight:700;
+  line-height:1.2;
+  margin-bottom:18px;
+}
+.section-sub{
+  font-size:1.05rem;
+  color:var(--muted);
+  max-width:560px;
+  line-height:1.8;
+  margin-bottom:56px;
+}
+.section--dark .section-sub{color:#7A90A8;}
+.divider{
+  width:52px;height:3px;
+  background:linear-gradient(90deg,var(--gold),var(--gold-lt));
+  border-radius:2px;
+  margin-bottom:28px;
+}
+
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:14px 30px;
+  font-family:var(--font-sans);
+  font-size:.88rem;font-weight:600;
+  letter-spacing:.04em;
+  border-radius:3px;cursor:pointer;
+  transition:all .25s;border:none;
+}
+.btn-gold{
+  background:var(--gold);color:var(--navy-deep);
+  box-shadow:0 4px 20px rgba(198,153,58,.35);
+}
+.btn-gold:hover{background:var(--gold-lt);transform:translateY(-2px);box-shadow:0 6px 28px rgba(198,153,58,.45);}
+.btn-outline-light{
+  background:transparent;color:var(--white);
+  border:1px solid rgba(255,255,255,.35);
+}
+.btn-outline-light:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px);}
+.btn-outline-gold{
+  background:transparent;color:var(--gold);
+  border:1px solid var(--gold);
+}
+.btn-outline-gold:hover{background:var(--gold-dim);transform:translateY(-2px);}
+
+/* ── NAV ─────────────────────────────────────────────── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:999;
+  padding:0 28px;
+  background:rgba(13,27,46,.96);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+}
+.nav-inner{
+  max-width:1140px;margin:0 auto;
+  height:70px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.logo{
+  display:flex;flex-direction:column;line-height:1.1;
+}
+.logo-name{
+  font-family:var(--font-serif);
+  font-size:1.15rem;font-weight:700;
+  color:var(--white);letter-spacing:.02em;
+}
+.logo-tag{
+  font-size:.64rem;font-weight:500;
+  color:var(--gold);letter-spacing:.18em;
+  text-transform:uppercase;
+}
+.nav-links{display:flex;align-items:center;gap:34px;list-style:none;}
+.nav-links a{
+  font-size:.84rem;font-weight:500;
+  color:rgba(255,255,255,.65);
+  letter-spacing:.04em;transition:color .2s;
+}
+.nav-links a:hover{color:var(--gold);}
+.nav-cta{margin-left:16px;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+.hamburger span{display:block;width:24px;height:2px;background:var(--white);transition:.3s;}
+
+/* ── HERO ─────────────────────────────────────────────── */
+#top{
+  min-height:100vh;
+  background:var(--navy-deep);
+  display:flex;align-items:center;
+  position:relative;overflow:hidden;
+  padding-top:70px;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 65% 70% at 15% 50%, rgba(198,153,58,.07) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 60% at 90% 20%, rgba(13,50,100,.5) 0%, transparent 60%);
+}
+/* Subtle column texture */
+.hero-columns{
+  position:absolute;inset:0;
+  background-image:repeating-linear-gradient(
+    90deg,
+    rgba(198,153,58,.025) 0px, rgba(198,153,58,.025) 1px,
+    transparent 1px, transparent 80px
+  );
+}
+/* Gold accent bar on left */
+.hero-bar{
+  position:absolute;left:0;top:0;bottom:0;
+  width:4px;
+  background:linear-gradient(180deg,transparent,var(--gold),transparent);
+}
+.hero-content{
+  position:relative;z-index:2;
+  max-width:680px;
+}
+.hero-flag{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:8px 16px;
+  border:1px solid var(--border);
+  border-radius:2px;
+  background:rgba(198,153,58,.08);
+  margin-bottom:36px;
+}
+.hero-flag span{font-size:.75rem;color:var(--gold);letter-spacing:.12em;font-weight:600;}
+.hero-flag .flag-sep{width:1px;height:14px;background:var(--border);}
+.hero-flag .flag-loc{font-size:.75rem;color:rgba(255,255,255,.5);}
+.hero-title{
+  font-family:var(--font-serif);
+  font-size:clamp(2.4rem,5vw,4rem);
+  font-weight:700;color:var(--white);
+  line-height:1.1;margin-bottom:10px;
+}
+.hero-title em{color:var(--gold);font-style:italic;}
+.hero-subtitle{
+  font-family:var(--font-serif);
+  font-size:clamp(1rem,2vw,1.25rem);
+  color:rgba(255,255,255,.55);
+  font-weight:400;font-style:italic;
+  margin-bottom:28px;
+}
+.hero-body{
+  font-size:1rem;color:rgba(255,255,255,.65);
+  line-height:1.85;max-width:540px;
+  margin-bottom:44px;
+}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
+.hero-rule{
+  margin-top:64px;padding-top:48px;
+  border-top:1px solid rgba(198,153,58,.2);
+  display:grid;grid-template-columns:repeat(3,auto);
+  gap:0;width:fit-content;gap:56px;
+}
+.hero-stat-val{
+  font-family:var(--font-serif);
+  font-size:2rem;font-weight:700;color:var(--gold);
+}
+.hero-stat-lbl{font-size:.78rem;color:rgba(255,255,255,.45);margin-top:2px;letter-spacing:.06em;}
+
+/* Decorative scales SVG */
+.hero-deco{
+  position:absolute;right:-20px;bottom:0;
+  opacity:.06;pointer-events:none;
+}
+
+/* ── SERVICES ─────────────────────────────────────────── */
+.services-intro{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:80px;align-items:center;
+  margin-bottom:64px;
+}
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:1px;
+  background:var(--border);
+  border:1px solid var(--border);
+  border-radius:6px;overflow:hidden;
+}
+.service-card{
+  background:var(--navy);
+  padding:36px 24px;
+  text-align:center;
+  transition:background .3s;
+  cursor:default;
+}
+.service-card:hover{background:var(--navy-mid);}
+.svc-icon{font-size:2.2rem;margin-bottom:20px;display:block;}
+.svc-name{
+  font-family:var(--font-serif);
+  font-size:1rem;font-weight:600;
+  color:var(--white);
+  margin-bottom:12px;line-height:1.3;
+}
+.svc-desc{font-size:.82rem;color:var(--muted);line-height:1.7;}
+.svc-link{
+  display:inline-block;margin-top:16px;
+  font-size:.75rem;color:var(--gold);
+  letter-spacing:.06em;font-weight:600;
+  transition:letter-spacing .2s;
+}
+.svc-link:hover{letter-spacing:.1em;}
+
+/* ── WHY CHOOSE ───────────────────────────────────────── */
+.why-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);
+  gap:2px;background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.08);border-radius:6px;overflow:hidden;
+}
+.why-item{
+  padding:42px 40px;
+  background:rgba(255,255,255,.03);
+  display:flex;gap:24px;align-items:flex-start;
+  transition:background .3s;
+}
+.why-item:hover{background:rgba(255,255,255,.06);}
+.why-num{
+  font-family:var(--font-serif);
+  font-size:2.4rem;font-weight:700;
+  color:var(--gold);opacity:.4;
+  line-height:1;flex-shrink:0;
+  margin-top:-6px;
+}
+.why-title{
+  font-family:var(--font-serif);
+  font-size:1.1rem;font-weight:600;
+  color:var(--white);margin-bottom:8px;
+}
+.why-text{font-size:.9rem;color:#7A90A8;line-height:1.75;}
+
+/* ── TESTIMONIALS ─────────────────────────────────────── */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.testi-card{
+  background:var(--white);
+  border:1px solid var(--cream-dk);
+  border-radius:6px;padding:36px 32px;
+  position:relative;
+  transition:border-color .3s,transform .3s;
+}
+.testi-card:hover{border-color:var(--gold-line);transform:translateY(-4px);}
+.testi-card::before{
+  content:'"';
+  font-family:var(--font-serif);
+  font-size:6rem;color:var(--gold);opacity:.12;
+  position:absolute;top:-10px;left:20px;
+  line-height:1;
+}
+.stars{color:var(--gold);font-size:.95rem;margin-bottom:18px;letter-spacing:.08em;}
+.testi-text{
+  font-family:var(--font-serif);
+  font-size:1rem;font-style:italic;
+  color:var(--text);line-height:1.75;
+  margin-bottom:24px;
+}
+.testi-author{
+  font-size:.8rem;font-weight:600;
+  color:var(--muted);letter-spacing:.06em;
+  text-transform:uppercase;
+}
+.testi-area{
+  font-size:.76rem;color:var(--gold);
+  margin-top:4px;
+}
+
+/* ── FAQ ──────────────────────────────────────────────── */
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.faq-item{
+  background:var(--white);
+  border:1px solid var(--cream-dk);
+  border-left:3px solid var(--gold);
+  border-radius:4px;
+  padding:28px 28px;
+}
+.faq-q{
+  font-family:var(--font-serif);
+  font-size:1rem;font-weight:600;
+  color:var(--text);margin-bottom:12px;
+}
+.faq-a{font-size:.9rem;color:#556070;line-height:1.75;}
+
+/* ── CONTACT ──────────────────────────────────────────── */
+.contact-wrap{
+  display:grid;grid-template-columns:1fr 1.5fr;
+  gap:60px;align-items:start;
+}
+.contact-card{
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:6px;padding:32px;
+  display:flex;gap:20px;align-items:flex-start;
+  transition:border-color .3s;
+}
+.contact-card:hover{border-color:var(--border);}
+.contact-ico{
+  width:48px;height:48px;
+  background:var(--gold-dim);border:1px solid var(--gold-line);
+  border-radius:8px;display:grid;place-items:center;
+  font-size:1.3rem;flex-shrink:0;
+}
+.contact-lbl{
+  font-size:.7rem;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--gold);
+  margin-bottom:6px;
+}
+.contact-val{font-size:.95rem;font-weight:500;color:var(--white);}
+.contact-hint{font-size:.8rem;color:var(--muted);margin-top:4px;}
+.contact-link{
+  display:inline-flex;align-items:center;gap:6px;
+  margin-top:14px;font-size:.82rem;font-weight:600;
+  color:var(--gold);letter-spacing:.06em;
+  transition:gap .2s;
+}
+.contact-link:hover{gap:10px;}
+.contact-form-wrap{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:6px;padding:40px 36px;
+}
+.form-title{
+  font-family:var(--font-serif);font-size:1.3rem;
+  font-weight:600;color:var(--white);margin-bottom:6px;
+}
+.form-sub{font-size:.85rem;color:var(--muted);margin-bottom:28px;}
+.form-group{margin-bottom:18px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+label{
+  display:block;font-size:.7rem;font-weight:600;
+  letter-spacing:.12em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:7px;
+}
+input,textarea,select{
+  width:100%;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:3px;
+  color:var(--white);
+  font-family:var(--font-sans);font-size:.9rem;
+  padding:12px 15px;outline:none;
+  transition:border-color .2s;
+}
+input:focus,textarea:focus,select:focus{border-color:var(--gold);}
+input::placeholder,textarea::placeholder{color:rgba(255,255,255,.25);}
+textarea{height:110px;resize:vertical;}
+select option{background:var(--navy);}
+.form-disclaimer{
+  font-size:.74rem;color:rgba(255,255,255,.3);
+  margin-top:14px;line-height:1.6;
+}
+
+/* ── ABOUT BAR ────────────────────────────────────────── */
+.about-bar{
+  background:var(--navy-mid);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  padding:64px 0;
+}
+.about-inner{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:80px;align-items:center;
+}
+.about-creds{display:flex;flex-direction:column;gap:12px;margin-top:28px;}
+.cred-item{
+  display:flex;align-items:center;gap:12px;
+  font-size:.88rem;color:rgba(255,255,255,.65);
+}
+.cred-item::before{content:'✦';color:var(--gold);font-size:.65rem;}
+.about-pillars{
+  display:grid;grid-template-columns:1fr 1fr;gap:16px;
+}
+.pillar{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+  border-top:2px solid var(--gold);
+  border-radius:4px;padding:22px 20px;
+}
+.pillar-title{
+  font-family:var(--font-serif);
+  font-size:.95rem;font-weight:600;
+  color:var(--white);margin-bottom:6px;
+}
+.pillar-text{font-size:.82rem;color:var(--muted);line-height:1.6;}
+
+/* ── FOOTER ───────────────────────────────────────────── */
+footer{
+  background:var(--navy-deep);
+  border-top:1px solid var(--border);
+  padding:56px 0 32px;
+}
+.footer-inner{
+  display:grid;grid-template-columns:2fr 1fr 1fr;
+  gap:48px;margin-bottom:48px;
+}
+.footer-brand .logo-name{font-size:1.1rem;}
+.footer-brand p{
+  font-size:.85rem;color:rgba(255,255,255,.4);
+  margin-top:14px;max-width:280px;line-height:1.75;
+}
+.footer-col h4{
+  font-size:.7rem;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:18px;
+}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.footer-col ul a{
+  font-size:.86rem;color:rgba(255,255,255,.45);transition:color .2s;
+}
+.footer-col ul a:hover{color:var(--gold);}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.06);
+  padding-top:28px;
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:.78rem;color:rgba(255,255,255,.25);
+}
+.disclaimer{
+  max-width:580px;line-height:1.6;
+}
+/* ── RESPONSIVE ───────────────────────────────────────── */
+@media(max-width:1024px){
+  .services-grid{grid-template-columns:repeat(3,1fr);}
+  .services-intro{grid-template-columns:1fr;gap:40px;}
+  .footer-inner{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:768px){
+  .section{padding:64px 0;}
+  .nav-links,.nav-cta{display:none;}
+  .hamburger{display:flex;}
+  .hero-rule{grid-template-columns:1fr 1fr;gap:28px;}
+  .services-grid{grid-template-columns:1fr 1fr;}
+  .why-grid,.testi-grid,.faq-grid,.contact-wrap,.about-inner,.about-pillars{grid-template-columns:1fr;}
+  .form-row{grid-template-columns:1fr;}
+  .footer-inner{grid-template-columns:1fr;}
+  .footer-bottom{flex-direction:column;gap:12px;text-align:center;}
+  .hero-deco{display:none;}
+}
+@media(max-width:480px){
+  .services-grid{grid-template-columns:1fr;}
+  .hero-rule{grid-template-columns:1fr 1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ──────────────────────────────────────────────── -->
+<nav>
+  <div class="nav-inner">
+    <a href="#top" class="logo">
+      <span class="logo-name">Dayor Kumar</span>
+      <span class="logo-tag">Law Firm · United Kingdom</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="btn btn-gold nav-cta" style="font-size:.78rem;padding:11px 22px;">Book a Consultation</a>
+    <button class="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ── HERO ──────────────────────────────────────────────── -->
+<section id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-columns"></div>
+  <div class="hero-bar"></div>
+
+  <!-- Decorative scales of justice -->
+  <svg class="hero-deco" width="600" height="700" viewBox="0 0 600 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="300" cy="80" r="12" stroke="white" stroke-width="2"/>
+    <line x1="300" y1="80" x2="300" y2="560" stroke="white" stroke-width="2"/>
+    <line x1="100" y1="200" x2="500" y2="200" stroke="white" stroke-width="2"/>
+    <line x1="100" y1="200" x2="60" y2="340" stroke="white" stroke-width="1.5"/>
+    <line x1="500" y1="200" x2="540" y2="340" stroke="white" stroke-width="1.5"/>
+    <ellipse cx="100" cy="200" rx="6" ry="6" fill="white"/>
+    <ellipse cx="500" cy="200" rx="6" ry="6" fill="white"/>
+    <path d="M30 340 Q60 360 90 340" stroke="white" stroke-width="1.5" fill="none"/>
+    <path d="M510 340 Q540 360 570 340" stroke="white" stroke-width="1.5" fill="none"/>
+    <rect x="270" y="555" width="60" height="10" rx="2" fill="white"/>
+    <rect x="285" y="565" width="30" height="50" rx="2" fill="white"/>
+    <rect x="240" y="610" width="120" height="8" rx="2" fill="white"/>
+  </svg>
+
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-flag">
+        <span>DAYOR KUMAR LAW FIRM</span>
+        <div class="flag-sep"></div>
+        <span class="flag-loc">🇬🇧 United Kingdom</span>
+      </div>
+      <h1 class="hero-title">
+        Trusted Legal Guidance.<br/>
+        <em>Professional Representation.</em>
+      </h1>
+      <p class="hero-subtitle">Practical Solutions for Every Legal Matter.</p>
+      <p class="hero-body">
+        We provide professional legal guidance and representation across a range of legal matters in the United Kingdom. Your legal matter deserves professional attention, clear communication, and dedicated representation — from first contact to final resolution.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-gold">Book a Consultation →</a>
+        <a href="#services" class="btn btn-outline-light">Explore Our Services</a>
+      </div>
+      <div class="hero-rule">
+        <div>
+          <div class="hero-stat-val">5</div>
+          <div class="hero-stat-lbl">Practice Areas</div>
+        </div>
+        <div>
+          <div class="hero-stat-val">100%</div>
+          <div class="hero-stat-lbl">Client Confidentiality</div>
+        </div>
+        <div>
+          <div class="hero-stat-val">24hr</div>
+          <div class="hero-stat-lbl">Response Time</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SERVICES ──────────────────────────────────────────── -->
+<section class="section section--dark" id="services">
+  <div class="container">
+    <div class="services-intro">
+      <div>
+        <div class="eyebrow">Practice Areas</div>
+        <div class="divider"></div>
+        <h2 class="section-title" style="color:var(--white);">Five Core Areas of Practice</h2>
+        <p class="section-sub">Each handled with care, diligence, and a practical focus on your goals. Whatever your legal matter, we bring the full depth of our experience to your side.</p>
+        <a href="#contact" class="btn btn-gold">Discuss Your Matter →</a>
+      </div>
+      <div style="color:rgba(255,255,255,.55);font-size:.95rem;line-height:1.9;border-left:2px solid var(--border);padding-left:36px;">
+        <p style="margin-bottom:16px;">At Dayor Kumar Law Firm, we believe every client deserves to fully understand their legal situation. We communicate in plain English — no confusing jargon, no unnecessary complexity.</p>
+        <p>From the moment you contact us, you will be treated with respect, honesty, and the professional diligence your matter demands. We do not take on more than we can handle — every client receives genuine, focused attention.</p>
+      </div>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="svc-icon">🏢</span>
+        <div class="svc-name">Corporate Law</div>
+        <div class="svc-desc">Guidance for businesses on structure, contracts, compliance, and commercial matters.</div>
+        <a href="#contact" class="svc-link">Enquire →</a>
+      </div>
+      <div class="service-card">
+        <span class="svc-icon">⚖️</span>
+        <div class="svc-name">Criminal Law</div>
+        <div class="svc-desc">Firm, professional representation when your rights and reputation are at stake.</div>
+        <a href="#contact" class="svc-link">Enquire →</a>
+      </div>
+      <div class="service-card">
+        <span class="svc-icon">👨‍👩‍👧</span>
+        <div class="svc-name">Family Law</div>
+        <div class="svc-desc">Sensitive, clear advice on family matters, with the wellbeing of those involved in mind.</div>
+        <a href="#contact" class="svc-link">Enquire →</a>
+      </div>
+      <div class="service-card">
+        <span class="svc-icon">🏠</span>
+        <div class="svc-name">Property Law</div>
+        <div class="svc-desc">Support with buying, selling, leasing, and resolving property-related matters.</div>
+        <a href="#contact" class="svc-link">Enquire →</a>
+      </div>
+      <div class="service-card">
+        <span class="svc-icon">🛂</span>
+        <div class="svc-name">Immigration Law</div>
+        <div class="svc-desc">Practical help navigating UK immigration processes, applications, and requirements.</div>
+        <a href="#contact" class="svc-link">Enquire →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ─────────────────────────────────────────────── -->
+<div class="about-bar" id="about">
+  <div class="container">
+    <div class="about-inner">
+      <div>
+        <div class="eyebrow">About the Firm</div>
+        <div class="divider"></div>
+        <h2 class="section-title" style="color:var(--white);">Why Choose Dayor Kumar Law Firm</h2>
+        <p style="color:rgba(255,255,255,.55);font-size:.95rem;line-height:1.85;margin-bottom:0;">
+          We take the time to understand each client's unique circumstances, protect their interests, and guide them clearly through their legal journey. Our approach is rooted in honesty, expertise, and genuine care for every outcome.
+        </p>
+        <div class="about-creds">
+          <div class="cred-item">Qualified and practising in England & Wales</div>
+          <div class="cred-item">Regulated in accordance with UK legal standards</div>
+          <div class="cred-item">Serving individual and corporate clients across the UK</div>
+          <div class="cred-item">Plain-English advice — no unnecessary complexity</div>
+          <div class="cred-item">Strict confidentiality on every matter</div>
+        </div>
+      </div>
+      <div class="about-pillars">
+        <div class="pillar">
+          <div class="pillar-title">Professional Attention</div>
+          <div class="pillar-text">Every matter receives careful, dedicated focus from first contact to final resolution.</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-title">Clear Communication</div>
+          <div class="pillar-text">Plain-English advice throughout — we keep you informed and in control at every stage.</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-title">Practical Solutions</div>
+          <div class="pillar-text">Realistic, achievable options aimed at the outcome you actually need.</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-title">Protecting Your Interests</div>
+          <div class="pillar-text">Dedicated representation and advocacy from the moment you engage us.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── TESTIMONIALS ───────────────────────────────────────── -->
+<section class="section section--cream" id="testimonials">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:56px;">
+      <div class="eyebrow">Client Testimonials</div>
+      <div class="divider" style="margin:14px auto 0;"></div>
+      <h2 class="section-title">What Clients Say</h2>
+      <p class="section-sub" style="margin:0 auto;">We measure our success by the confidence and clarity our clients feel at every stage of their matter.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">"Clear, professional and always available to answer my questions. I understood every step of my case from start to finish."</p>
+        <div class="testi-author">Satisfied Client</div>
+        <div class="testi-area">Family Law</div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">"Practical advice that saved my business both time and money. Dayor Kumar came highly recommended and absolutely delivered."</p>
+        <div class="testi-author">Business Client</div>
+        <div class="testi-area">Corporate Law</div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">"Calm, thorough, and completely dedicated to my case. I felt supported throughout my entire immigration application process."</p>
+        <div class="testi-author">Individual Client</div>
+        <div class="testi-area">Immigration Law</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ────────────────────────────────────────────────── -->
+<section class="section section--white" id="faq">
+  <div class="container">
+    <div style="max-width:700px;margin-bottom:56px;">
+      <div class="eyebrow">Frequently Asked</div>
+      <div class="divider"></div>
+      <h2 class="section-title">Common Questions</h2>
+      <p class="section-sub" style="margin-bottom:0;">Everything you need to know before getting in touch. If your question isn't answered here, message us directly.</p>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <div class="faq-q">Which areas of law do you cover?</div>
+        <div class="faq-a">Corporate, Criminal, Family, Property, and Immigration Law — for individuals and businesses throughout the United Kingdom.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How do I book a consultation?</div>
+        <div class="faq-a">Message us on Telegram or send an email using the contact details below. Briefly describe your matter and we will respond promptly with clear next steps.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What should I include in my first message?</div>
+        <div class="faq-a">Your name, the type of legal matter, a short summary of the situation, and any urgent deadlines you are aware of. This helps us respond accurately and quickly.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is my information kept confidential?</div>
+        <div class="faq-a">Absolutely. We treat the details of every matter with strict professionalism and discretion. Your information is never shared without your explicit consent.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How quickly will you respond?</div>
+        <div class="faq-a">We aim to respond to all enquiries within 24 hours. For urgent legal matters, please indicate the urgency in your message and we will prioritise accordingly.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do you offer a free initial consultation?</div>
+        <div class="faq-a">We offer an initial discussion to assess your matter and advise on the appropriate next steps. Get in touch to find out how we can assist with your specific situation.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ────────────────────────────────────────────── -->
+<section class="section section--dark" id="contact">
+  <div class="container">
+    <div class="eyebrow">Get in Touch</div>
+    <div class="divider"></div>
+    <h2 class="section-title" style="color:var(--white);">Book a Consultation</h2>
+    <p class="section-sub">Tell us about your matter and we will respond with clear, practical next steps. All communications are treated with complete confidentiality.</p>
+
+    <div class="contact-wrap">
+      <div style="display:flex;flex-direction:column;gap:16px;">
+
+        <div class="contact-card">
+          <div class="contact-ico">✈️</div>
+          <div>
+            <div class="contact-lbl">Telegram</div>
+            <div class="contact-val">@Dayord1</div>
+            <div class="contact-hint">Fastest response — message us directly</div>
+            <a href="https://t.me/Dayord1" target="_blank" class="contact-link">Open Telegram →</a>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-ico">✉️</div>
+          <div>
+            <div class="contact-lbl">Email</div>
+            <div class="contact-val">dayo94327@gmail.com</div>
+            <div class="contact-hint">For detailed enquiries and documentation</div>
+            <a href="mailto:dayo94327@gmail.com?subject=Consultation Request" class="contact-link">Send Email →</a>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-ico">🇬🇧</div>
+          <div>
+            <div class="contact-lbl">Jurisdiction</div>
+            <div class="contact-val">United Kingdom</div>
+            <div class="contact-hint">England, Wales & all UK legal matters</div>
+          </div>
+        </div>
+
+        <div style="padding:24px;background:var(--gold-dim);border:1px solid var(--gold-line);border-radius:6px;">
+          <div style="font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">Confidentiality Assured</div>
+          <div style="font-size:.85rem;color:rgba(255,255,255,.55);line-height:1.7;">Every enquiry is handled with strict professional discretion. Contacting us does not create a solicitor-client relationship until engagement is formally confirmed.</div>
+        </div>
+
+      </div>
+
+      <div class="contact-form-wrap">
+        <div class="form-title">Send an Enquiry</div>
+        <div class="form-sub">We'll respond within 24 hours with clear next steps.</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" placeholder="Your full name"/>
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="your@email.com"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Area of Law</label>
+          <select>
+            <option value="">Select your matter...</option>
+            <option>Corporate Law</option>
+            <option>Criminal Law</option>
+            <option>Family Law</option>
+            <option>Property Law</option>
+            <option>Immigration Law</option>
+            <option>Other / Not Sure</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Describe Your Matter</label>
+          <textarea placeholder="Please provide a brief summary of your legal matter, including any relevant deadlines or urgency..."></textarea>
+        </div>
+        <button class="btn btn-gold" style="width:100%;justify-content:center;" onclick="handleSubmit(this)">
+          Submit Enquiry →
+        </button>
+        <div class="form-disclaimer">
+          By submitting this form you confirm that the information provided is accurate. This does not constitute legal advice or create a solicitor-client relationship.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="logo-name">Dayor Kumar</span>
+          <span class="logo-tag">Law Firm · United Kingdom</span>
+        </div>
+        <p>Professional legal guidance and representation across Corporate, Criminal, Family, Property, and Immigration Law in the United Kingdom.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Practice Areas</h4>
+        <ul>
+          <li><a href="#services">Corporate Law</a></li>
+          <li><a href="#services">Criminal Law</a></li>
+          <li><a href="#services">Family Law</a></li>
+          <li><a href="#services">Property Law</a></li>
+          <li><a href="#services">Immigration Law</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="https://t.me/Dayord1">Telegram: @Dayord1</a></li>
+          <li><a href="mailto:dayo94327@gmail.com">dayo94327@gmail.com</a></li>
+          <li><a href="#faq">FAQs</a></li>
+          <li><a href="#contact">Book a Consultation</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="disclaimer">
+        Disclaimer: The information on this website is for general guidance only and does not constitute legal advice. Contacting us does not create a solicitor-client relationship until engagement is confirmed. © 2026 Dayor Kumar Law Firm. All rights reserved.
+      </div>
+      <div style="flex-shrink:0;color:var(--gold);font-size:.8rem;margin-top:8px;">🇬🇧 United Kingdom</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ── SCRIPTS ─────────────────────────────────────────────── -->
+<script>
+  function handleSubmit(btn) {
+    btn.textContent = '✓ Enquiry Received — We\'ll be in touch within 24 hours';
+    btn.style.background = '#2A7A4A';
+    btn.style.boxShadow = '0 4px 20px rgba(42,122,74,.4)';
+    btn.disabled = true;
+  }
+
+  // Fade-in on scroll
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll(
+    '.service-card,.testi-card,.faq-item,.why-item,.pillar,.contact-card'
+  ).forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(18px)';
+    el.style.transition = 'opacity .5s ease, transform .5s ease';
+    observer.observe(el);
+  });
+
+  // Active nav link
+  const sections = document.querySelectorAll('section[id], div[id]');
+  const links = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let cur = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) cur = s.id; });
+    links.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + cur ? 'var(--gold)' : '';
+    });
+  });
+</script>
+</body>
+</html>
